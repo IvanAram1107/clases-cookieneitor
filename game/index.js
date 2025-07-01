@@ -10,3 +10,8 @@ import { Heroe } from "./heroe.js";
 
 const heroe1 = new Heroe("Aram", 100, 10);
 console.log(heroe1);
+
+// Github Branches and PRs
+// Destructuring objects in JS
+// More on export/import in JS
+// Nullish coalescing, logical OR (||) and logical AND (&&)
