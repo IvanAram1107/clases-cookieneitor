@@ -15,3 +15,6 @@ console.log(heroe1);
 // Destructuring objects in JS
 // More on export/import in JS
 // Nullish coalescing, logical OR (||) and logical AND (&&)
+// Optional chaining (?.)
+// Operator precedence
+// Short-circuit evaluation
