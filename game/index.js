@@ -1,10 +1,6 @@
 import { Orco, Cookieneitor, Dragon } from "./mounstro.js";
 import { Game } from "./game.js";
 
-
-// const heroe1 = new Heroe("Aram", 100, 10);
-// console.log(heroe1);
-
 // Getters and Setters
 // Switch statement
 // Github Branches and PRs
@@ -46,5 +42,3 @@ import { Game } from "./game.js";
   P# = El espacio en el que se encuentra algun jugador
   x = En caso de haber visitado esa casilla 
 */
-
-console.log("HERE");
