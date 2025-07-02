@@ -178,6 +178,44 @@ const convertToLowercase = true;
 const res = convertToLowercase ? word.toLowerCase() : word;
 
 --------------------------------------------------------------------------------
+- Switch
+
+switch(<identifier>) {
+  [case <value>:
+    [<statement>; ,...]
+    break;
+  , ...]
+  [default:
+    [<statement>; ,...]
+    break;
+  ]
+}
+
+----------------------------------------
+- Ejemplo:
+
+const num = 3;
+switch (num) {
+  case 0:
+    console.log("Entered to case 0");
+    break;
+  case 1:
+    console.log("Entered to case 1");
+    break;
+  case 2:
+    console.log("Entered to case 2");
+    break;
+  case 3:
+    console.log("Entered to case 3");
+    break;
+  default:
+    console.log("Entered default case");
+    break;
+}
+
+--------------------------------------------------------------------------------
+
+
 DEFINICIONES:
 
 <identifier>:     El nombre que recibe una variable, constante, funcion o parametro

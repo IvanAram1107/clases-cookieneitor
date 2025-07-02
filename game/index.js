@@ -1,16 +1,17 @@
 import { Orco, Cookieneitor, Dragon } from "./mounstro.js";
 import { Game } from "./game.js";
 
-// Getters and Setters
-// Switch statement
-// Github Branches and PRs
 // Destructuring objects in JS
 // More on export/import in JS
-// Nullish coalescing, logical OR (||) and logical AND (&&)
+// Promises
+
 // Optional chaining (?.)
 // Operator precedence
 // Short-circuit evaluation
-// Promises
+// Nullish coalescing, logical OR (||) and logical AND (&&)
+// Switch statement
+// Getters and Setters
+// Github Branches and PRs
 
 /*
 - Cambiar la clase Heroe para que solo reciba el nombre del heroe y por defecto
