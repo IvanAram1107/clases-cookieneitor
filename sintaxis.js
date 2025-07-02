@@ -173,7 +173,9 @@ new Person("Ivan Gonzalez", 29);
 ----------------------------------------
 - Ejemplo:
 
-
+const word = "WORD";
+const convertToLowercase = true;
+const res = convertToLowercase ? word.toLowerCase() : word;
 
 --------------------------------------------------------------------------------
 DEFINICIONES:
