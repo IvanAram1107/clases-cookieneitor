@@ -183,12 +183,10 @@ const res = convertToLowercase ? word.toLowerCase() : word;
 switch(<identifier>) {
   [case <value>:
     [<statement>; ,...]
-    break;
-  , ...]
+    break; ,...]
   [default:
     [<statement>; ,...]
-    break;
-  ]
+    break;]
 }
 
 ----------------------------------------
@@ -214,7 +212,19 @@ switch (num) {
 }
 
 --------------------------------------------------------------------------------
+- Nullish coalescing
 
+<value> ?? <value>
+
+----------------------------------------
+- Ejemplo:
+
+const defaultUser = new User("Default");
+const user = null;
+
+const currentUser = user ?? defaultUser;
+
+--------------------------------------------------------------------------------
 
 DEFINICIONES:
 

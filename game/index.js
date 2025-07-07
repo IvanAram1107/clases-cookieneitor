@@ -4,6 +4,7 @@ import { Game } from "./game.js";
 // Destructuring objects in JS
 // More on export/import in JS
 // Promises
+// First class functions
 
 // Optional chaining (?.)
 // Operator precedence
