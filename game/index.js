@@ -1,19 +1,6 @@
 import { Orco, Cookieneitor, Dragon } from "./mounstro.js";
 import { Game } from "./game.js";
 
-// Destructuring objects in JS
-// More on export/import in JS
-// Promises
-// First class functions
-
-// Optional chaining (?.)
-// Operator precedence
-// Short-circuit evaluation
-// Nullish coalescing, logical OR (||) and logical AND (&&)
-// Switch statement
-// Getters and Setters
-// Github Branches and PRs
-
 /*
 - Cambiar la clase Heroe para que solo reciba el nombre del heroe y por defecto
   le ponga 100 de vida y un numero aleatorio entre 5 y 20 de ataque. Para obtener
