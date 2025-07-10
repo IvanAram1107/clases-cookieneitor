@@ -1,25 +1,25 @@
 import { Criatura } from './criatura.js';
 
 class Mounstro extends Criatura {
-  constructor (name, life, attack){
-    super(name, life, attack);
+  constructor (name, life, attack, defense){
+    super(name, life, attack, defense);
   }
 }
 
 export class Orco extends Mounstro {
   constructor () {
-    super ("Orco", 50, 20);
+    super ("Orco", 30, 20, 5);
   }
 }
 
 export class Dragon extends Mounstro {
   constructor () {
-    super ("Dragon", 100, 200);
+    super ("Dragon", 50, 30, 10);
   }
 }
 
 export class Cookieneitor extends Mounstro {
   constructor () {
-    super ("Cookieneitor", Infinity, Infinity);
+    super ("Cookieneitor", 100, 40, 15);
   }
 }

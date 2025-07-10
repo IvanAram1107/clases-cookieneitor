@@ -2,32 +2,81 @@ import { Orco, Cookieneitor, Dragon } from "./mounstro.js";
 import { Game } from "./game.js";
 
 /*
-- Cambiar la clase Heroe para que solo reciba el nombre del heroe y por defecto
-  le ponga 100 de vida y un numero aleatorio entre 5 y 20 de ataque. Para obtener
-  este valor pueden usar la siguiente linea de codigo:
-  Math.floor(Math.random() * 16) + 5;
-- Implementar una clase Logger en el archivo de input.js la cual se va a encargar
-  de toda la interaccion con el usuario (mostrar mensajes, hacer preguntas, etc).
-  Ahorita ya puse 3 funciones genericas en ese archivo que van a ayudar a cumplir
-  este punto. (Estas funciones deben pertenecer a la clase Logger)
-- Añadir un atributo para la defensa de las criaturas. El heroe debe asignar un 
-  valor aleatorio entre 10 y 20:
-  Math.floor(Math.random() * 11) + 10;
-  Y para los mounstros se debe asignar algun valor para cada tipo de mounstro 
-- Añadir un atributo para guardar la posicion de las criaturas, éste puede ser 
-  una lista de 2 valores (uno para la posicion en X y el otro para la posicion en Y),
-  o si quieren puede ser un objeto que tenga de propiedades 'x' y 'y'.
-- Añadir un metodo para mover a una criatura (este deberá actualizar el atributo
-  anteriormente creado).
-- En la clase Game se debe implementar las funciones para generar el mapa de juego,
-  mostrar el mapa, mover a un jugador, interactuar con casilla y terminar la partida.
-  Ademas de validaciones de movimientos, etc.
-- La generacion del mapa debe ser aleatoria (La posicion del jugador, la posicion
-  del cofre ganador y la posicion de los enemigos). Lo que no es aleatorio es el
-  tamaño del mapa (width x height) y la cantidad de enemigos 
-- La funcion que van a crear para mostrar el mapa debe de mostrar el mapa en una
-  cuadricula y cada espacio de esta cuadricula debe tener:
-  ? = En caso de que el espacio no haya sido visitado
-  P# = El espacio en el que se encuentra algun jugador
-  x = En caso de haber visitado esa casilla 
+Info:
+El juego que estamos haciendo puede ser jugado de 1 a 4 jugadores. y el objetivo
+es encontrar el cofre antes que los demas jugadores y se juega por turnos. En cada
+turno de cada jugador se lanza 1 dado y el jugador se mueve el numero que caiga
+el dado. El tablero en el cual se desarrolla el juego es una cuadricula que puede
+ser pequeño (5x5), mediano (7x8) o grande (10x10). Los jugadores inician el juego
+en alguna casilla aleatoria, al igual que los enemigos, el cofre, las trampas y 
+los objetos. Los enemigos pueden ser Orcos, Dragones o Cookieneitors, las trampas
+bajan una pequeña cantidad de vida al jugador y los objetos pueden ser pociones
+de vida, pociones de ataque, pociones de defensa o pociones full (suben ataque
+y defensa). El numero de enemigos, objetos y trampas varia dependiendo del tamaño
+del tablero:
+
++---------------+-------+---------+--------+
+|               | Chico | Mediano | Grande |
++---------------+-------+---------+--------+
+| Orcos         | 5     | 15      | 35     |
+| Dragones      | 3     | 9       | 16     |
+| Cookieneitors | 1     | 2       | 3      |
+| P. de vida    | 3     | 8       | 12     |
+| P. de ataque  | 1     | 3       | 5      |
+| P. de defensa | 1     | 3       | 5      |
+| P. full       | 1     | 2       | 3      |
+| Trampas       | 1     | 3       | 5      |
+| Cofres        | 1     | 2       | 3      |
++---------------+-------+---------+--------+
+
+Si el jugador cae en una casilla de un enemigo empieza un combate automatico el
+el cual tambien es por turnos empezando por el jugador. En cada turno del combate
+el jugador y el enemigo se intentaran atacar y basado en la siguiente tabla de
+probabilidades es que se determinará si el ataque fue exitoso, critico, o falló.
+
++---------------+----------------+---------+-------+
+|               | Ataque exitoso | Critico | Fallo |
++---------------+----------------+---------+-------+
+| Jugador       | 95%            | 5%      | 0%    |
+| Orco          | 85%            | 0%      | 15%   |
+| Dragon        | 70%            | 2%      | 28%   |
+| Cookieneitor  | 55%            | 4%      | 41%   |
++---------------+----------------+---------+-------+
+
+El jugador no puede moverse a la casilla de otro jugador y los enemigos no se mueven,
+solo los jugadores.
+Si un jugador muere renace despues de 3 turnos en alguna casilla aleatoria que ya
+haya sido descubierta, y el mounstro se queda en el tablero en la casilla en la
+que estaba y con la vida que le dejó el jugador antes de morir.
+En el momento en que un jugador encuentra 1 cofre se acaba del juego, y ese jugador
+sería el ganador mientras que los demas jugadores habrian perdido la partida (esto
+solo lo pongo para indicar que no existe segundo, tercero, o cuarto lugar, solo
+1 ganador y los demas perdedores).
+*/
+/*
+Tareas:
+- Crear una clase para los objetos
+- Crear una clase para los jugadores
+- Crear una clase para las trampas (Talvez no sea necesario pero por cualquier cosa lo pongo aqui)
+- Agregar un metodo en la clase Game para generar el mapa y poblarlo
+- Agregar un metodo en la clase Game para mostrar el mapa
+- Agregar un metodo en la clase Game para jugar 1 turno del juego
+- Agregar un metodo en la clase de los jugadores para "tirar un dado" y mover a
+  su Heroe
+- Agregar un metodo en la clase Heroe para interactuar con las pociones.
+- La clase Game debera tener los metodos necesarios para hacer las validaciones.
+  Por ejemplo si el jugador esta en la casilla (1, 1) y tira un 1, el jugador
+  puede moverse a 4 diferentes lugares (0, 1), (2, 1), (1, 0) y (1, 2), entonces
+  si el jugador ingresa unas coordenadas diferentes pues no debería ser aceptado
+  y se debería preguntar al usuario que intente otra vez.
+- La clase Game debera tener los metodos necesarios para llevar a cabo una batalla
+  entre 1 jugador y 1 enemigo, el cual debera tomar en cuenta la tabla de porcentajes
+  descrita en la seccion anterior
+*/
+/*
+Notas:
+- Si necesitan crear mas attributos o metodos no hay problema, no se limiten a los
+  que se piden en las tareas
+- En el archivo helper.js agregué un par de funciones que nos van a ayudar a obtener
+  valores aleatorios
 */
