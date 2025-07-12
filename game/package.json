@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "docs": "jsdoc ."
+    "predocs": "rm -rf ./out",
+    "docs": "jsdoc -c ./jsdoc.conf.json -r . --verbose",
+    "postdocs": "start ./out/index.html"
   },
   "repository": {
     "type": "git",
