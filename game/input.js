@@ -2,7 +2,10 @@ import readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
 
 export default class Logger {
-  static rl = readline.createInterface({ input, output })
+  static rl = readline.createInterface({ input, output });
+  static {
+    this.rl.pause();
+  }
 
   static async askQuestion(question) {
     const answer = await Logger.rl.question(`> ${question.trim()}: `);

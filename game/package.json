@@ -1,0 +1,17 @@
+{
+  "name": "cookieneitor-game",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "docs": "jsdoc ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvanAram1107/clases-cookieneitor.git"
+  },
+  "devDependencies": {
+    "jsdoc": "^4.0.4"
+  },
+  "type": "module"
+}

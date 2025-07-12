@@ -1,9 +1,8 @@
-import { Orco, Cookieneitor, Dragon } from "./mounstro.js";
 import { Game } from "./game.js";
 
 /*
 Info:
-El juego que estamos haciendo puede ser jugado de 1 a 4 jugadores. y el objetivo
+El juego que estamos haciendo puede ser jugado de 1 a 4 jugadores y el objetivo
 es encontrar el cofre antes que los demas jugadores y se juega por turnos. En cada
 turno de cada jugador se lanza 1 dado y el jugador se mueve el numero que caiga
 el dado. El tablero en el cual se desarrolla el juego es una cuadricula que puede

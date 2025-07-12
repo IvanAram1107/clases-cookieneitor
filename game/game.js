@@ -1,4 +1,4 @@
-import { Logger } from './input.js';
+import Logger from './input.js';
 import { Heroe } from './heroe.js';
 
 export class Game {
