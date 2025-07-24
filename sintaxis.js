@@ -137,6 +137,33 @@ function sumar(num1, num2) {
 sumar(1, 2);
 
 --------------------------------------------------------------------------------
+- Declaracion y ejecucion de arrow functions:
+
+- Si el cuerpo de la funcion es de mas de 1 linea de codigo se usan llaves para 
+  delimitar el cuerpo de la funcion:
+
+([<parameter> [= <value>] ,...]) => {
+  [<statement>; ,...]
+}
+
+- Si solo va a tener 1 linea de codigo pueden omitirse las llaves (En este caso
+  lo que regrese la linea de codigo se va a regresar por la funcion de flecha):
+
+([<parameter> [= <value>] ,...]) => <statement>
+
+----------------------------------------
+- Ejemplos:
+
+(num1, num2) => num1 + num2;
+
+(text) => {
+  let result = text.toLowerCase();
+  result = result.trim();  
+  result = "Resultado: " + result;
+  return result;
+}
+
+--------------------------------------------------------------------------------
 - Clases
 
 class <identifier> [extends <class>] {
@@ -228,19 +255,19 @@ const currentUser = user ?? defaultUser;
 
 DEFINICIONES:
 
-<identifier>:     El nombre que recibe una variable, constante, funcion o parametro
-<value>:          Cualquier valor real que javascript puede identificar, como numeros, strings, booleanos, nulos, etc.
-<condition>:      Cualquier expresion que se pueda evaluar como true o false, las cuales suelen ser formadas con operadores logicos y/o con operadores de comparacion.
-                  En un for se usa para determinar cuando se termina el for
-<statement>:      cualquier expresion de javascript (como una declaracion, una llamada a una funcion, o cualquier cosa)
-<initialization>: Expresion que se ejecuta al inicio de un ciclo for, normalmente usada para declarar una variable
-<increment>:      Expresion que se ejecuta al final de cada iteracion de un ciclo for, normalmente usada para incrementar la variable declarada en el ciclo for
-<iterable>:       Cualquier valor, variable o constante que tenga indices y que se pueda recorrer indice por indice 
-<object>:         Tipo de dato en JS usado para guardar informacion en pares llave-valor
-<parameter>:      Variable que se declara en la definición de la función para recibir valores que se le pasan al llamarla
-<argument>:       Valor que recibe un parametro de una funcion a la hora de llamarla
-                  Cuando se usa el operador new hace referencia a las valores que reciben los parametros del constructor de la clase
-<class>:          El nombre de una clase
+<identifier>:       El nombre que recibe una variable, constante, funcion o parametro
+<value>:            Cualquier valor real que javascript puede identificar, como numeros, strings, booleanos, nulos, etc.
+<condition>:        Cualquier expresion que se pueda evaluar como true o false, las cuales suelen ser formadas con operadores logicos y/o con operadores de comparacion.
+                    En un for se usa para determinar cuando se termina el for
+<statement>:        cualquier expresion de javascript (como una declaracion, una llamada a una funcion, o cualquier cosa)
+<initialization>:   Expresion que se ejecuta al inicio de un ciclo for, normalmente usada para declarar una variable
+<increment>:        Expresion que se ejecuta al final de cada iteracion de un ciclo for, normalmente usada para incrementar la variable declarada en el ciclo for
+<iterable>:         Cualquier valor, variable o constante que tenga indices y que se pueda recorrer indice por indice 
+<object>:           Tipo de dato en JS usado para guardar informacion en pares llave-valor
+<parameter>:        Variable que se declara en la definición de la función para recibir valores que se le pasan al llamarla
+<argument>:         Valor que recibe un parametro de una funcion a la hora de llamarla
+                    Cuando se usa el operador new hace referencia a las valores que reciben los parametros del constructor de la clase
+<class>:            El nombre de una clase
 
 --------------------------------------------------------------------------------
 */

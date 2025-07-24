@@ -13,20 +13,21 @@ recibida en el segundo parametro estaríamos rechazando la promesa (normalmente 
 se hace cuando hay algun error o algo por el estilo), y tambien le podemos pasar
 el motivo por el cual estamos rechazando la promesa como argumento a dicha funcion;
 este motivo lo podremos usar en el .catch de la promesa.
-
 */
-// function ejecutora(resolve, reject) {
+
+// function funcionEjecutora(resolve, reject) {
 //   resolve("Fulfilled promise 1");
 //   // reject("Rejected promise 1");
 // }
-
+// const promise1 = new Promise(funcionEjecutora);
 // function logValue(value) {
 //   console.log("Value:", value);
 // }
 // function logError(err) {
 //   console.log("Error:", err);
 // }
-// const promise1 = new Promise(ejecutora);
+// promise1.then(logValue).catch(logError);
+
 const promise1 = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve("Fulfilled promise 1");
@@ -39,7 +40,6 @@ promise1.then(value => {
 }).catch(err => {
   console.log("Error:", err);
 });
-// promise1.then(logValue).catch(logError);
 /*
 promise1.then(
   function(value) {
@@ -69,10 +69,7 @@ TODO: Add description
 
 
 const promise = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    // resolve("Hola Cesar!");
-    reject("Hola Cesar!");
-  }, 1000);
+  setTimeout(() => resolve("Hola Cesar!"), 1000);
 });
 
 try {
@@ -81,4 +78,3 @@ try {
 } catch (err) {
   console.log("fun1 - error:", err);
 }
-
